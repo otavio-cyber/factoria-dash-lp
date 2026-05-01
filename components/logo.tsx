@@ -156,7 +156,7 @@ export function FactoriaLogo({ className = '', animated = false, variant = 'full
       )}
       {variant === 'full' && (
         <span className="text-xl font-bold text-white tracking-tight hidden sm:inline" style={{ fontFamily: 'var(--font-display)' }}>
-          FactorIA
+          FactoriA.
         </span>
       )}
     </div>
