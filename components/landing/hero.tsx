@@ -59,7 +59,7 @@ export function Hero({ onCTAClick }: HeroProps = {}) {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Pare de abrir 10 abas por cliente. O Factoria centraliza métricas, budgets e campanhas de todas as suas contas em tempo real — com alertas de orçamento e visão consolidada.
+              Chega de abrir 4 abas por cliente. O FactorIA centraliza métricas, budgets e campanhas de todas as suas contas em tempo real — com alertas de orçamento e visão consolidada.
             </motion.p>
 
             {/* CTAs */}
@@ -74,16 +74,16 @@ export function Hero({ onCTAClick }: HeroProps = {}) {
                 onClick={onCTAClick}
                 className="bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white font-semibold px-8 h-12 text-base"
               >
-                Começar grátis — 14 dias
+                Teste grátis — 7 dias
               </Button>
-              <Button 
+              {/* <Button 
                 size="lg" 
                 variant="outline" 
                 className="border-white/10 bg-white/5 hover:bg-white/10 text-white font-medium px-8 h-12 text-base"
               >
                 <Play className="w-4 h-4 mr-2" />
                 Ver demonstração
-              </Button>
+              </Button> */}
             </motion.div>
 
             {/* Trust line */}
@@ -93,7 +93,7 @@ export function Hero({ onCTAClick }: HeroProps = {}) {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-sm text-muted-foreground"
             >
-              Sem cartão de crédito. Cancela quando quiser.
+              Sem cartão de crédito. Cancele quando quiser.
             </motion.p>
           </motion.div>
 

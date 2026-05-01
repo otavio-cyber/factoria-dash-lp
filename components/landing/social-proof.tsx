@@ -6,17 +6,17 @@ import { useRef } from "react"
 
 const stats = [
   {
-    value: "R$ 2M+",
+    value: "R$ 1.7M+",
     label: "em verba gerenciada pela plataforma",
     color: "#4F8EF7",
   },
   {
-    value: "50+",
+    value: "67+",
     label: "contas conectadas",
     color: "#A259FF",
   },
   {
-    value: "0",
+    value: "ZERO",
     label: "planilhas — tudo automatizado",
     color: "#22c55e",
   },
@@ -24,19 +24,19 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "Antes eu gastava 2 horas por dia só abrindo contas e copiando dados. Agora tudo está em um lugar só.",
-    author: "Ricardo M.",
-    role: "Gestor de Tráfego",
+    quote: "Com o monitoramento através do FactorIA eu tenho mais tempo para buscar soluções e oportunidades para meus clientes.",
+    author: "Samuel Toulone.",
+    role: "Estrategista e PPC",
   },
   {
-    quote: "O alerta de budget me salvou várias vezes. Nunca mais estourei orçamento de cliente sem saber.",
-    author: "Mariana S.",
+    quote: "Agora eu e meu time temos em uma única tela de fácil leitura, a visão completa de performance e orçamento de todas as nossas contas de anúncios.",
+    author: "Mariana Salomão.",
     role: "Head de Performance",
   },
   {
-    quote: "Finalmente consigo ter uma visão real de todos os meus clientes sem planilha nenhuma.",
-    author: "Lucas F.",
-    role: "Dono de Agência",
+    quote: "Finalmente consigo ter uma visão em tempo real de todos os meus clientes sem planilha nenhuma.",
+    author: "Junior J.",
+    role: "Agencia de Marketing Digital",
   },
 ]
 
