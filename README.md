@@ -198,7 +198,7 @@ Todos os direitos reservados. Propriedade da Factoria.
 ## 👥 Contato
 
 - Website: [factoria.dev](https://factoria.dev)
-- Email: contato@factoria.dev
+- Email: falecom@factoria.dev
 
 ---
 
