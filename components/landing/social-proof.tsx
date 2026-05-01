@@ -7,7 +7,7 @@ import { useRef } from "react"
 const stats = [
   {
     value: "R$ 1.7M+",
-    label: "em verba gerenciada pela plataforma",
+    label: "em verba monitorada pela plataforma",
     color: "#4F8EF7",
   },
   {
@@ -16,8 +16,8 @@ const stats = [
     color: "#A259FF",
   },
   {
-    value: "ZERO",
-    label: "planilhas — tudo automatizado",
+    value: "0",
+    label: "Sem planilhas, tudo automatizado",
     color: "#22c55e",
   },
 ]
@@ -26,17 +26,17 @@ const testimonials = [
   {
     quote: "Com o monitoramento através do FactorIA eu tenho mais tempo para buscar soluções e oportunidades para meus clientes.",
     author: "Samuel Toulone.",
-    role: "Estrategista e PPC",
+    role: "Estrategista e PPC - ES",
   },
   {
-    quote: "Agora eu e meu time temos em uma única tela de fácil leitura, a visão completa de performance e orçamento de todas as nossas contas de anúncios.",
+    quote: "Em uma única tela de fácil leitura, consigo acompanhar o desempenho de todas as minhas contas, sem precisar abrir planilhas ou acessar cada plataforma individualmente.",
     author: "Mariana Salomão.",
-    role: "Head de Performance",
+    role: "Head de Performance - SP",
   },
   {
     quote: "Finalmente consigo ter uma visão em tempo real de todos os meus clientes sem planilha nenhuma.",
     author: "Junior J.",
-    role: "Agencia de Marketing Digital",
+    role: "Agencia de Marketing Digital - SP",
   },
 ]
 
