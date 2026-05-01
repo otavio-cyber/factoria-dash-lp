@@ -1,6 +1,6 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
+import { FactoriaLogo } from "@/components/logo"
 
 const footerLinks = [
   { href: "#funcionalidades", label: "Funcionalidades" },
@@ -17,13 +17,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo and tagline */}
           <div className="flex flex-col items-center md:items-start gap-3">
-            <a href="#" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#4F8EF7] to-[#A259FF] flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                Factoria.
-              </span>
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <FactoriaLogo variant="full" />
             </a>
             <p className="text-sm text-muted-foreground max-w-xs text-center md:text-left">
               O dashboard de mídia paga para quem leva performance a sério.

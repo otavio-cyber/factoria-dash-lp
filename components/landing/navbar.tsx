@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Menu, X, TrendingUp } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { FactoriaLogo } from "@/components/logo"
 
 const navLinks = [
   { href: "#funcionalidades", label: "Funcionalidades" },
@@ -37,13 +38,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#4F8EF7] to-[#A259FF] flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-white tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
-              Factoria.
-            </span>
+          <a href="#" className="hover:opacity-80 transition-opacity">
+            <FactoriaLogo variant="full" animated={true} />
           </a>
 
           {/* Desktop Navigation */}

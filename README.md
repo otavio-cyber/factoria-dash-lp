@@ -78,6 +78,34 @@ pnpm start
 pnpm lint
 ```
 
+## � Design & Identidade Visual
+
+### Paleta de Cores
+- **Cor Primária**: `#4F8EF7` (Azul) - CTAs e elementos principais
+- **Cor Secundária**: `#A259FF` (Roxo) - Destaques e acentos
+- **Background**: `#07080a` (Preto Deep) - Tema dark
+- **Foreground**: `#f4f4f5` (Branco off) - Texto principal
+- **Success**: `#22c55e` (Verde) - Mensagens de sucesso
+- **Accent**: `#06b6d4` (Cyan) - Elementos especiais
+
+### Logo
+O logo Factoria é um componente React customizado que:
+- Utiliza SVG com gradientes da paleta do projeto
+- Suporta modo icon-only e full (com texto)
+- Inclui animações via Framer Motion
+- Está disponível em [components/logo.tsx](components/logo.tsx)
+
+Uso:
+```tsx
+import { FactoriaLogo } from "@/components/logo"
+
+// Versão completa com animação
+<FactoriaLogo variant="full" animated={true} />
+
+// Apenas ícone
+<FactoriaLogo variant="icon" />
+```
+
 ## 🏗️ Estrutura do Projeto
 
 ```
@@ -86,8 +114,9 @@ pnpm lint
 │   ├── page.tsx             # Homepage
 │   └── globals.css          # Estilos globais
 ├── components/
+│   ├── logo.tsx             # Componente Logo Factoria
 │   ├── landing/             # Componentes da landing page
-│   │   ├── navbar.tsx
+│   │   ├── navbar.tsx       # Navbar com logo integrado
 │   │   ├── hero.tsx
 │   │   ├── features.tsx
 │   │   ├── pricing.tsx
@@ -97,27 +126,13 @@ pnpm lint
 │   │   ├── for-who.tsx
 │   │   ├── social-proof.tsx
 │   │   ├── final-cta.tsx
-│   │   └── footer.tsx
+│   │   └── footer.tsx       # Footer com logo integrado
 │   └── ui/                  # Componentes UI reutilizáveis
 ├── hooks/                   # React hooks customizados
 ├── lib/                     # Utilitários e funções auxiliares
 ├── public/                  # Arquivos estáticos
 └── styles/                  # Folhas de estilo
 ```
-
-## 🎨 Componentes Principais
-
-### Landing Page
-- **Hero Section**: Apresentação principal com Call-to-Action
-- **Features**: Destaques das funcionalidades principais
-- **Pain Points**: Problemas resolvidos pela plataforma
-- **For Who**: Público-alvo e personas
-- **Dashboard Mockup**: Visualização da interface
-- **Pricing**: Tabela de preços e planos
-- **Social Proof**: Depoimentos e casos de sucesso
-- **FAQ**: Perguntas frequentes
-- **Final CTA**: Call-to-action final
-- **Footer**: Rodapé com links importantes
 
 ## 🔧 Configuração do Build
 
