@@ -90,7 +90,10 @@ pnpm lint
 
 ### Logo
 O logo Factoria é um componente React customizado que:
-- Utiliza SVG com gradientes da paleta do projeto
+- Utiliza SVG com design de **átomo** representando conectividade
+- Múltiplas órbitas com elétrons em 3 posições
+- Linhas de conexão do núcleo aos elétrons
+- Gradientes animados (azul + roxo)
 - Suporta modo icon-only e full (com texto)
 - Inclui animações via Framer Motion
 - Está disponível em [components/logo.tsx](components/logo.tsx)
@@ -106,28 +109,88 @@ import { FactoriaLogo } from "@/components/logo"
 <FactoriaLogo variant="icon" />
 ```
 
+## 📝 Formulário de Contato
+
+### Modal de Contato (ContactFormModal)
+Componente modal com formulário de captura de leads:
+
+**Campos do Formulário:**
+- `Nome` * (obrigatório)
+- `Email` * (obrigatório)
+- `Telefone` * (obrigatório)
+- `Cidade` * (obrigatório)
+- `Agência` (opcional)
+
+**Integração:**
+- Backend: [Formspree](https://formspree.io/) - ID `mdkwjovd`
+- Validação em tempo real
+- Estados: Enviando, Sucesso
+- Mensagem de agradecimento customizada
+
+**Uso:**
+```tsx
+import { ContactFormModal } from "@/components/contact-form-modal"
+
+function App() {
+  const [isOpen, setIsOpen] = useState(false)
+  
+  return (
+    <>
+      <button onClick={() => setIsOpen(true)}>Abrir Modal</button>
+      <ContactFormModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+    </>
+  )
+}
+```
+
+**Integração com CTAs:**
+O modal é disparado automaticamente quando o usuário clica em qualquer botão "Começar grátis" ou "Falar com a gente" em:
+- Navbar
+- Hero Section
+- Pricing Cards
+- Final CTA
+
+### WhatsApp Floating Button
+Botão flutuante de WhatsApp fixo na tela:
+
+**Features:**
+- Posicionado no bottom-right (fixo)
+- Animação de pulse suave
+- Tooltip ao passar o mouse
+- Abre conversa no WhatsApp Business
+- Telefone: `+55 35 99974-7335`
+
+**Componente:**
+- Arquivo: [components/whatsapp-button.tsx](components/whatsapp-button.tsx)
+- Automaticamente incluído no layout raiz
+- Usa ícone oficial do WhatsApp
+- Responsivo e acessível
+
 ## 🏗️ Estrutura do Projeto
 
 ```
 ├── app/
-│   ├── layout.tsx           # Root layout com Google Tag Manager
-│   ├── page.tsx             # Homepage
+│   ├── layout.tsx           # Root layout com Google Tag Manager e WhatsApp button
+│   ├── page.tsx             # Homepage (client wrapper)
 │   └── globals.css          # Estilos globais
 ├── components/
-│   ├── logo.tsx             # Componente Logo Factoria
+│   ├── logo.tsx             # Componente Logo Factoria (atom design)
+│   ├── contact-form-modal.tsx # Modal de contato com Formspree
+│   ├── whatsapp-button.tsx  # Botão flutuante do WhatsApp
+│   ├── landing-page-client.tsx # Wrapper client para gerenciar estado do modal
 │   ├── landing/             # Componentes da landing page
-│   │   ├── navbar.tsx       # Navbar com logo integrado
-│   │   ├── hero.tsx
+│   │   ├── navbar.tsx       # Navbar com logo e CTA integrado
+│   │   ├── hero.tsx         # Hero section com CTA
 │   │   ├── features.tsx
-│   │   ├── pricing.tsx
+│   │   ├── pricing.tsx      # Planos com CTAs
 │   │   ├── faq.tsx
 │   │   ├── dashboard-mockup.tsx
 │   │   ├── pain-points.tsx
 │   │   ├── for-who.tsx
 │   │   ├── social-proof.tsx
-│   │   ├── final-cta.tsx
-│   │   └── footer.tsx       # Footer com logo integrado
-│   └── ui/                  # Componentes UI reutilizáveis
+│   │   ├── final-cta.tsx    # CTA final
+│   │   └── footer.tsx       # Footer com logo
+│   └── ui/                  # Componentes UI reutilizáveis (Radix UI + Tailwind)
 ├── hooks/                   # React hooks customizados
 ├── lib/                     # Utilitários e funções auxiliares
 ├── public/                  # Arquivos estáticos
@@ -193,6 +256,8 @@ NODE_ENV=production
 NEXT_PUBLIC_VERCEL_ANALYTICS_ID=<id>
 ```
 
+**Nota:** O formulário de contato usa [Formspree](https://formspree.io/) com ID `mdkwjovd` - sem necessidade de variáveis de ambiente (já integrado no componente).
+
 ## 🐛 Troubleshooting
 
 ### Build não completa
@@ -205,6 +270,16 @@ pnpm build
 - Verificar Console do navegador (Network e Sources)
 - Conferir GTM Container em: https://tagmanager.google.com/
 - Verificar Pixel do Meta em: https://business.facebook.com/
+
+### Formulário não envia
+- Verificar se o Formspree ID `mdkwjovd` está correto em [components/contact-form-modal.tsx](components/contact-form-modal.tsx)
+- Conferir console do navegador para erros de rede
+- Testar em https://formspree.io/dashboard
+
+### WhatsApp button não abre
+- Verificar que o número está no formato correto: `+5535999747335`
+- Usar WhatsApp Web ou app instalado no dispositivo
+- Testar em navegador mobile
 
 ## 📄 Licença
 
