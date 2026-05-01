@@ -6,7 +6,11 @@ import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
-export function FinalCTA() {
+interface FinalCTAProps {
+  onCTAClick?: () => void
+}
+
+export function FinalCTA({ onCTAClick }: FinalCTAProps = {}) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -42,6 +46,7 @@ export function FinalCTA() {
           >
             <Button 
               size="lg" 
+              onClick={onCTAClick}
               className="bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white font-semibold px-8 h-14 text-lg group"
             >
               Criar minha conta grátis

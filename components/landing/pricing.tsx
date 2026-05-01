@@ -55,7 +55,11 @@ const plans = [
   },
 ]
 
-export function Pricing() {
+interface PricingProps {
+  onCTAClick?: () => void
+}
+
+export function Pricing({ onCTAClick }: PricingProps = {}) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -141,6 +145,7 @@ export function Pricing() {
                 </ul>
 
                 <Button 
+                  onClick={onCTAClick}
                   className={`w-full ${
                     plan.highlighted 
                       ? 'bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white' 

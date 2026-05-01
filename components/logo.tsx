@@ -16,7 +16,7 @@ export function FactoriaLogo({ className = '', animated = false, variant = 'full
       xmlns="http://www.w3.org/2000/svg"
       className={`w-8 h-8 ${className}`}
     >
-      {/* Main shape - stylized "F" or abstract design */}
+      {/* Atom/Connectivity Logo */}
       <defs>
         <linearGradient id="factoriaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#4F8EF7" />
@@ -26,24 +26,117 @@ export function FactoriaLogo({ className = '', animated = false, variant = 'full
           <stop offset="0%" stopColor="#A259FF" />
           <stop offset="100%" stopColor="#4F8EF7" />
         </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
       </defs>
 
-      {/* Top left square */}
-      <rect x="4" y="6" width="12" height="12" rx="2" fill="url(#factoriaGradient)" />
-
-      {/* Top right square */}
-      <rect x="20" y="6" width="12" height="12" rx="2" fill="url(#factoriaAccent)" />
-
-      {/* Bottom left section */}
-      <path
-        d="M 4 22 L 16 22 L 16 34 Q 16 38 12 38 Q 8 38 8 34 L 8 28 L 4 28 Z"
-        fill="url(#factoriaGradient)"
+      {/* Orbital rings */}
+      {/* Outer ring - tilted */}
+      <ellipse
+        cx="24"
+        cy="24"
+        rx="16"
+        ry="8"
+        fill="none"
+        stroke="url(#factoriaGradient)"
+        strokeWidth="1.5"
+        opacity="0.6"
+        transform="rotate(-25 24 24)"
       />
 
-      {/* Bottom right section */}
-      <path
-        d="M 20 22 L 42 22 L 42 34 Q 42 38 38 38 L 20 38 Z"
+      {/* Middle ring - tilted other direction */}
+      <ellipse
+        cx="24"
+        cy="24"
+        rx="12"
+        ry="10"
+        fill="none"
+        stroke="url(#factoriaAccent)"
+        strokeWidth="1.5"
+        opacity="0.5"
+        transform="rotate(35 24 24)"
+      />
+
+      {/* Inner ring - vertical */}
+      <circle
+        cx="24"
+        cy="24"
+        r="7"
+        fill="none"
+        stroke="url(#factoriaGradient)"
+        strokeWidth="1"
+        opacity="0.4"
+      />
+
+      {/* Nucleus - core */}
+      <circle
+        cx="24"
+        cy="24"
+        r="3.5"
+        fill="url(#factoriaGradient)"
+        filter="url(#glow)"
+      />
+
+      {/* Electrons on outer orbit - 3 positions */}
+      {/* Top electron */}
+      <circle
+        cx="24"
+        cy="8"
+        r="2"
         fill="url(#factoriaAccent)"
+        filter="url(#glow)"
+      />
+
+      {/* Bottom-left electron */}
+      <circle
+        cx="10"
+        cy="34"
+        r="2"
+        fill="url(#factoriaGradient)"
+        filter="url(#glow)"
+      />
+
+      {/* Bottom-right electron */}
+      <circle
+        cx="38"
+        cy="34"
+        r="2"
+        fill="url(#factoriaAccent)"
+        filter="url(#glow)"
+      />
+
+      {/* Connection lines from electrons to nucleus */}
+      <line
+        x1="24"
+        y1="10"
+        x2="24"
+        y2="20"
+        stroke="url(#factoriaGradient)"
+        strokeWidth="0.8"
+        opacity="0.3"
+      />
+      <line
+        x1="12"
+        y1="32"
+        x2="20"
+        y2="26"
+        stroke="url(#factoriaAccent)"
+        strokeWidth="0.8"
+        opacity="0.3"
+      />
+      <line
+        x1="36"
+        y1="32"
+        x2="28"
+        y2="26"
+        stroke="url(#factoriaGradient)"
+        strokeWidth="0.8"
+        opacity="0.3"
       />
     </svg>
   )

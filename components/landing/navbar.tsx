@@ -12,7 +12,11 @@ const navLinks = [
   { href: "#planos", label: "Planos" },
 ]
 
-export function Navbar() {
+interface NavbarProps {
+  onCTAClick?: () => void
+}
+
+export function Navbar({ onCTAClick }: NavbarProps = {}) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -59,7 +63,10 @@ export function Navbar() {
             >
               Entrar
             </a>
-            <Button className="bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white font-medium px-5">
+            <Button 
+              onClick={onCTAClick}
+              className="bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white font-medium px-5"
+            >
               Começar grátis →
             </Button>
           </div>
@@ -99,7 +106,10 @@ export function Navbar() {
             >
               Entrar
             </a>
-            <Button className="bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white font-medium w-full mt-2">
+            <Button 
+              onClick={onCTAClick}
+              className="bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white font-medium w-full mt-2"
+            >
               Começar grátis →
             </Button>
           </div>

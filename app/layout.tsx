@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { IBM_Plex_Sans, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { WhatsAppFloatingButton } from '@/components/whatsapp-button'
 import './globals.css'
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -99,6 +100,7 @@ fbq('track', 'PageView');`,
         </noscript>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <WhatsAppFloatingButton />
       </body>
     </html>
   )

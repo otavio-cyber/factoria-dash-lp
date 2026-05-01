@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button"
 import { DashboardMockup } from "./dashboard-mockup"
 import { Play } from "lucide-react"
 
-export function Hero() {
+interface HeroProps {
+  onCTAClick?: () => void
+}
+
+export function Hero({ onCTAClick }: HeroProps = {}) {
   return (
     <section className="relative min-h-screen pt-20 lg:pt-32 pb-20 overflow-hidden">
       {/* Animated background */}
@@ -67,6 +71,7 @@ export function Hero() {
             >
               <Button 
                 size="lg" 
+                onClick={onCTAClick}
                 className="bg-[#4F8EF7] hover:bg-[#3d7ce5] text-white font-semibold px-8 h-12 text-base"
               >
                 Começar grátis — 14 dias
